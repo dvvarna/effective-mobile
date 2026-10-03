@@ -26,9 +26,9 @@ func NewSubscriptionHandler(svc *service.SubscriptionService, logger *slog.Logge
 // @Summary Create Subscriptions
 // @Description Create Subscriptions
 // @Tags Subscriptions
-// @Accept json
-// @Produce json
-// @Param body body []effective-mobile/internal/models.CreateSubscriptionRequestItem true "Array subscriptions"
+// @Accept JSON
+// @Produce JSON
+// @Param body []effective-mobile/internal/models.CreateSubscriptionRequestItem true "Array subscriptions"
 // @Success 200 {array} effective-mobile/internal/models.CreateSubscriptionResponseItem
 // @Failure 400 {object} map[string]string
 // @Failure 500 {object} map[string]string
@@ -74,7 +74,7 @@ func writeJSON(w http.ResponseWriter, status int, v interface{}) {
 // @Summary List Subscriptions
 // @Description Return List Subscriptions
 // @Tags Subscriptions
-// @Produce json
+// @Produce JSON
 // @Param page query int false "Number page" default(1)
 // @Param limit query int false "Limit rows" default(20)
 // @Param user_id query string false "User UUID"
@@ -109,7 +109,7 @@ func (h *SubscriptionHandler) ListSubscriptions(w http.ResponseWriter, r *http.R
 // @Summary Получить одну подписку
 // @Description Возвращает данные подписки по ID
 // @Tags Subscriptions
-// @Produce json
+// @Produce JSON
 // @Param user_subscription_id path int true "ID подписки"
 // @Success 200 {object} effective-mobile/internal/models.ReadSubscriptionResponse
 // @Failure 400 {object} map[string]string
